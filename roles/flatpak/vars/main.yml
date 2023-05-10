@@ -1,0 +1,7 @@
+---
+# FLATPAK VARIABLES: ##################
+flatpaks:
+  - com.vscodium.codium
+  - io.freetubeapp.FreeTube
+  - org.signal.Signal
+  - tv.plex.PlexDesktop

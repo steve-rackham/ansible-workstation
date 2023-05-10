@@ -1,0 +1,40 @@
+---
+# DNF TASKS: ##########################
+# OPTIMISE DNF: #######################
+- name: Optimise DNF
+  ansible.builtin.lineinfile:
+    path: /etc/dnf/dnf.conf
+    line: max_parallel_downloads=10
+
+# UPDATE PACKAGES: ####################
+- name: Update Installed Packages
+  ansible.builtin.dnf:
+    name: "*"
+    state: latest
+
+# INSTALL RPM REPOS: ##################
+- name: Install RPM Repos
+  ansible.builtin.dnf:
+    name: '{{ item }}'
+    state: present
+    disable_gpg_check: true
+  loop: '{{ rpm }}'
+
+# INSTALL LIBREWOLF FROM FILE: ########
+- name: Install LibreWolf Repo
+  command: dnf config-manager --add-repo '{{ librewolf }}'
+
+# INSTALL PACKAGES: ###################
+- name: Install Required Packages
+  ansible.builtin.dnf:
+    name: '{{ item }}'
+    state: present
+  loop: '{{ packages }}'
+
+# INSTALL CODECS: #####################
+- name: Install CODEC Packages
+  ansible.builtin.dnf:
+    name: '{{ item }}'
+    state: present
+    exclude: gstreamer1-plugins-bad-free-devel
+  loop: '{{ codecs }}'

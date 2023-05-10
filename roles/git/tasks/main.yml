@@ -1,0 +1,10 @@
+---
+# GIT CONFIG: #########################
+- name: Configure Git Global Settings
+  template:
+    src: .gitconfig
+    dest: /home/wolf/.gitconfig
+
+# SSH KEY: ############################
+- name: Create SSH Key
+  command: ssh-keygen -t ed25519 -C '{{ email }}'
