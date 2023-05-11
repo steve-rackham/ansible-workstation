@@ -38,3 +38,10 @@
     state: present
     exclude: gstreamer1-plugins-bad-free-devel
   loop: '{{ codecs }}'
+
+# REMOVE PACKAGESS: ###################
+- name: Remove Packages
+  ansible.builtin.dnf:
+    name: '{{ item }}'
+    state: absent
+  loop: '{{ remove }}'

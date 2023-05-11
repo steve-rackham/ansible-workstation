@@ -1,2 +1,6 @@
 ---
-# DNF CONFIGURATION:
+# COMMON TASKS: #######################
+# Hostname: ###########################
+- name: Set Hostname 
+  ansible.builtin.hostname: 
+    name: '{{ hostname }}'

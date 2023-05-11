@@ -10,12 +10,19 @@ librewolf: "https://rpm.librewolf.net/librewolf-repo.repo"
 # PACKAGES: ###########################
 packages:
   - broadcom-wl
+  - evolution
   - gnome-disk-utility
+  - gnome-extensions-app
+  - gnome-shell-extension-dash-to-dock
+  - gnome-shell-extension-dash-to-panel
+  - gnome-shell-extension-gsconnect
+  - gnome-shell-extension-openweather
+  - gnome-shell-extension-user-theme
   - hugo
-  - kvantum
+  - libgtop2-devel 
   - librewolf
-  - latte-dock
-  - lpf-spotify-client
+  - lm_sensors
+  - logiops
   - lutris
   - steam
 
@@ -26,3 +33,11 @@ codecs:
   - gstreamer1-plugins-good-extras
   - gstreamer1-plugins-ugly
   - gstreamer1-vaapi
+
+
+remove: 
+  - gnome-calendar
+  - gnome-contacts
+  - gnome-maps
+  - gnome-tour
+  

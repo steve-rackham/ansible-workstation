@@ -1,0 +1,18 @@
+---
+# SSH CONFIGURATION: ##################
+# SSH DIRECTORY: ######################
+- name: Create SSH DIRECTORY
+  become_user: wolf
+  ansible.builtin.file:
+    path: ~/.ssh/
+    state: directory 
+
+# SSH KEY: ############################
+- name: Create SSH Key
+  become_user: wolf
+  community.crypto.openssh_keypair:
+    path: ~/.ssh/id_ed25519
+    type: ed25519
+    state: present
+    regenerate: never
+    comment: '{{ comment }}'

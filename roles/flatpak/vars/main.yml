@@ -4,4 +4,6 @@ flatpaks:
   - com.vscodium.codium
   - io.freetubeapp.FreeTube
   - org.signal.Signal
+  - org.gimp.GIMP
   - tv.plex.PlexDesktop
+  - org.gnome.Extensions
