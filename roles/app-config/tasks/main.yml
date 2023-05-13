@@ -1,0 +1,6 @@
+---
+# APP CONFIGURATION: ##################
+# CODIUM EXTENSIONS: ##################
+- name: Codium Extenstions
+  ansible.builtin.debug:
+    msg: "Installing Codium Extensions"

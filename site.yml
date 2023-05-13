@@ -5,4 +5,8 @@
   become: yes
 
   roles:
-    - flatpak
+    - system
+    - user
+    - app-packages
+    - app-config
+    - desktop-customisation

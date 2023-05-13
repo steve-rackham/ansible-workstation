@@ -1,0 +1,43 @@
+---
+# USER CONFIGURATION: #################
+# SSH DIRECTORY: ######################
+- name: Create SSH Directory
+  tags: [ssh]
+  become_user: '{{ username }}'
+  ansible.builtin.file:
+    path: ~/.ssh/
+    state: directory 
+
+# DevOps DIRECTORY: ###################
+- name: Create DevOps Directory
+  tags: [devops]
+  become_user: '{{ username }}'
+  ansible.builtin.file:
+    path: ~/DevOps/
+    state: directory 
+
+# THEME DIRECTORY: ####################
+- name: Create Theme Directory
+  tags: [devops]
+  become_user: '{{ username }}'
+  ansible.builtin.file:
+    path: ~/DevOps/Theme
+    state: directory 
+
+# SSH KEY: ############################
+- name: Create SSH Key
+  tags: [ssh]
+  become_user: '{{ username }}'
+  community.crypto.openssh_keypair:
+    path: ~/.ssh/id_ed25519
+    type: ed25519
+    state: present
+    regenerate: never
+    comment: '{{ comment }}'
+
+# GIT CONFIG: #########################
+- name: Configure Git Global Settings
+  tags: [git, app-config]
+  template:
+    src: .gitconfig
+    dest: /home/'{{ username }}'/.gitconfig

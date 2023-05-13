@@ -1,7 +1,0 @@
----
-# GIT CONFIG: #########################
-- name: Configure Git Global Settings
-  template:
-    src: .gitconfig
-    dest: /home/wolf/.gitconfig
-

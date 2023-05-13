@@ -8,23 +8,29 @@ rpm:
 librewolf: "https://rpm.librewolf.net/librewolf-repo.repo"
 
 # PACKAGES: ###########################
-packages:
+drivers:
   - broadcom-wl
+  - logiops
+
+apps: 
+  - lutris
+  - timeshift
+  - steam
   - evolution
-  - gnome-disk-utility
-  - gnome-extensions-app
+  - hugo
+  - librewolf
+
+gnome: 
+  - gtk-murrine-engine
   - gnome-shell-extension-dash-to-dock
   - gnome-shell-extension-dash-to-panel
   - gnome-shell-extension-gsconnect
   - gnome-shell-extension-openweather
   - gnome-shell-extension-user-theme
-  - hugo
+  - gnome-tweaks
   - libgtop2-devel 
-  - librewolf
   - lm_sensors
-  - logiops
-  - lutris
-  - steam
+  - sassc
 
 codecs:
   - gstreamer1-libav
@@ -34,7 +40,18 @@ codecs:
   - gstreamer1-plugins-ugly
   - gstreamer1-vaapi
 
+# FLATPAK VARIABLES: ##################
+flatpaks:
+  - com.bitwarden.desktop
+  - com.mattjakeman.ExtensionManager
+  - com.vscodium.codium
+  - io.freetubeapp.FreeTube
+  - org.gimp.GIMP
+  - org.gnome.Extensions
+  - org.signal.Signal
+  - tv.plex.PlexDesktop
 
+# UNWANTED PACKAGES: ##################
 remove: 
   - gnome-calendar
   - gnome-contacts

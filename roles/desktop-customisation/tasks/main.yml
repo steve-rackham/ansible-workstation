@@ -1,0 +1,57 @@
+---
+# DESKTOP CUSTOMISATIONS TASK: ########
+# THEME: ##############################
+- name: Clone Theme 
+  tags: [customisation, theme]
+  become_user: '{{ username }}'
+  ansible.builtin.git:
+    repo: git@github.com:vinceliuice/Graphite-gtk-theme.git
+    dest: ~/DevOps/Theme/graphite-gtk-theme   
+
+- name: Install Theme 
+  tags: [theme]
+  become_user: '{{ username }}'
+  command: ~/DevOps/Theme/graphite-gtk-theme/install.sh
+
+
+# ICONS: ##############################
+- name: Clone Icons  
+  tags: [customisation, theme, icons]
+  become_user: '{{ username }}'
+  ansible.builtin.git:
+    repo: git@github.com:vinceliuice/Tela-circle-icon-theme.git
+    dest: ~/DevOps/Theme/tela-circle-icons   
+    
+- name: Install Icons 
+  tags: [theme, icons]
+  become_user: '{{ username }}'
+  command: ~/DevOps/Theme/tela-circle-icons/install.sh
+
+- name: Set Icons 
+  tags: [theme, icons]
+  become_user: '{{ username }}'
+  command: gsettings set org.gnome.desktop.interface icon-theme "Tela circle dark"
+
+# CURSORS: ############################
+- name: Clone Cursors 
+  tags: [customisation, theme, cursors]
+  become_user: '{{ username }}'
+  ansible.builtin.git:
+    repo: git@github.com:vinceliuice/Graphite-cursors.git
+    dest: ~/DevOps/Theme/graphite-gtk-cursors   
+
+- name: Install Cursors 
+  tags: [theme, cursors]
+  become_user: '{{ username }}'
+  command: ~/DevOps/Theme/graphite-gtk-cursors/install.sh
+
+# WALLPAPER: ##########################
+- name: Install Wallpaper 
+  tags: [theme, wallpaper]
+  become_user: '{{ username }}'
+  command: ~/DevOps/Theme/graphite-gtk-theme/wallpaper/install-wallpapers.sh
+
+- name: Set Wallpaper
+  tags: [theme, wallpaper]
+  become_user: '{{ username }}'
+  command: gsettings set org.gnome.desktop.background picture-uri "file:~/.local/share/backgrounds/wave-Dark-fedora.png"

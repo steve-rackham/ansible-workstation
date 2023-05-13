@@ -1,6 +1,13 @@
 ---
 # COMMON TASKS: #######################
+# SHOW FACTS: [DEBUG]: ################
+- name: Show Facts 
+  tags: [debug]
+  ansible.builtin.debug:
+    var: ansible_facts
+
 # Hostname: ###########################
 - name: Set Hostname 
+  tags: [system]
   ansible.builtin.hostname: 
     name: '{{ hostname }}'

@@ -1,0 +1,15 @@
+---
+# APP-CONFIG VARIABLES: ###############
+# VS Code Extensions: #################
+code_extensions: 
+  - aprilandjan.ascii-tree-generator
+  - eamodio.gitlens
+  - hashicorp.terraform
+  - ms-azuretools.vscode-azureterraform
+  - ms-python.python
+  - ms-vscode.azure-account
+  - ms-vscode.powershell-preview
+  - PKief.material-icon-theme
+  - redhat.ansible
+  - redhat.vscode-yaml
+  - yzhang.markdown-all-in-one
