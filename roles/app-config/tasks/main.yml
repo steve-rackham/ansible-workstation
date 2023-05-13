@@ -1,6 +1,31 @@
 ---
 # APP CONFIGURATION: ##################
-# CODIUM EXTENSIONS: ##################
+# CODIUM: #############################
 - name: Codium Extenstions
+  tags: [codium]
   ansible.builtin.debug:
     msg: "Installing Codium Extensions"
+
+# STARSHIP: ###########################
+# ADD COPR: 
+- name: Add Starship COPR
+  tags: [customisation, terminal]
+  community.general.copr:
+    name: atim/starship
+    state: enabled
+
+# INSTALL: 
+- name: Install Starship Shell Prompt
+  tags: [customisation, terminal]
+  ansible.builtin.dnf:
+    name: starship 
+    state: present
+
+# ADD PROFILES: 
+- name: Add Starship to Profiles 
+  tags: [customisation, terminal]
+  become_user: '{{ username }}'
+  ansible.builtin.lineinfile:
+    path: ~/.bashrc
+    line: eval "$(starship init bash)"
+
