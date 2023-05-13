@@ -1,9 +1,11 @@
 ---
 # MAIN: ###############################
-- name: MAIN | Fedora Workstation Configuration
+- name: Fedora Workstation Configuration
   hosts: localhost
+  # Allow Root Access:
   become: yes
 
+# ROLES: ##############################
   roles:
     - system
     - user

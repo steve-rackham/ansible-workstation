@@ -1,6 +1,6 @@
 ---
 # APP-CONFIG VARIABLES: ###############
-# VS Code Extensions: #################
+# VS Codium Extensions: ###############
 code_extensions: 
   - aprilandjan.ascii-tree-generator
   - eamodio.gitlens

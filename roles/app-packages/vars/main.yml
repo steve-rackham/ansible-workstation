@@ -19,6 +19,7 @@ apps:
   - evolution
   - hugo
   - librewolf
+  - hwinfo
 
 gnome: 
   - gtk-murrine-engine
