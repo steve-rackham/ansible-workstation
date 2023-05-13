@@ -119,5 +119,6 @@ playbook: site.yml
 - remove
 - ssh
 - system
+- terminal
 - theme
 - wallpaper
