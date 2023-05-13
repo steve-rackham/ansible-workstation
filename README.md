@@ -1,6 +1,11 @@
 # Overview
-Setup Fedora Workstation post installation.
-
+Setup Fedora Workstation post installation for home use. 
+- Why?
+  - I've wanted to learn ansible for some time and this was a good learning opportunity.
+  - Just so much easier to reinstall and get going again!
+- Sharing for educational purposes after reviewing some other similar repos on GitHub which were helpful in the learning process. Hope it helps someone get started.
+- **Use at your own risk!**
+  
 ## Requirements
 - Fresh installation of Fedora Workstation.
   - Tested with Fedora 38 and Gnome 44.
@@ -58,19 +63,31 @@ The playbook requires elevation for the bulk of the installs. It is assumed that
 
 ## Examples
 ### Example: Run every role and task:
-1. From within the ansible-workstation directory:
+1. Update any var files and global vars as required.
+2. From within the ansible-workstation directory:
 
 ```shell
 ansible-playbook --inventory localhost site.yml -ask-become-pass
 ```
 ### Example: Run only themes tag
-1. From within the ansible-workstation directory:
+1. Update any var files and global vars as required.
+2. From within the ansible-workstation directory:
 
 ```shell
 ansible-playbook --inventory localhost site.yml -ask-become-pass -tags theme
 ```
 
-## Available Tags
+### Example: Run every but the themes tag
+1. Update any var files and global vars as required.
+2. From within the ansible-workstation directory:
+
+```shell
+ansible-playbook --inventory localhost site.yml -ask-become-pass --skip-tags theme
+```
+<br>
+
+## Tags
+### Available Tags:
 Show available tags:
 
 ```shell
@@ -83,7 +100,8 @@ playbook: site.yml
       TASK TAGS: [app-config, apps, cleanup, codecs, cursors, customisation, debug, devops, dnf, drivers, flatpaks, git, gnome, icons, remove, ssh, system, theme, wallpaper]
 ```
 
-### Tags
+### Tags and Reference
+#TODO: Add table and description for each tag.
 - app-config
 - apps
 - cleanup
