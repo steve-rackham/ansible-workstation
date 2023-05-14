@@ -1,3 +1,4 @@
 ---
 # DESKTOP CUSTOMISATIONS VARS: ########
-theme: 
+theme_src: git@github.com:vinceliuice/Graphite-gtk-theme.git
+theme_dest: 

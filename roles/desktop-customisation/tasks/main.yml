@@ -25,7 +25,7 @@
 - name: Install Icons 
   tags: [theme, icons]
   become_user: '{{ username }}'
-  command: ~/DevOps/Theme/tela-circle-icons/install.sh
+  command: ~/DevOps/Theme/tela-circle-icons/install.sh -c
 
 - name: Set Icons 
   tags: [theme, icons]
@@ -40,10 +40,15 @@
     repo: git@github.com:vinceliuice/Graphite-cursors.git
     dest: ~/DevOps/Theme/graphite-gtk-cursors   
 
+# The cursor install script prompts the user.
 - name: Install Cursors 
   tags: [theme, cursors]
   become_user: '{{ username }}'
-  command: ~/DevOps/Theme/graphite-gtk-cursors/install.sh
+  expect: 
+    command: ~/DevOps/Theme/graphite-gtk-cursors/install.sh
+    responses:
+      Question:
+        - 1
 
 # WALLPAPER: ##########################
 - name: Install Wallpaper 

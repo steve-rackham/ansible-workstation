@@ -1,28 +1,13 @@
 ---
 # USER CONFIGURATION: #################
-# SSH DIRECTORY: ######################
+# DIRECTORY: ##########################
 - name: Create SSH Directory
   tags: [ssh]
   become_user: '{{ username }}'
   ansible.builtin.file:
-    path: ~/.ssh/
+    path: ~/'{{ item }}'
     state: directory 
-
-# DevOps DIRECTORY: ###################
-- name: Create DevOps Directory
-  tags: [devops]
-  become_user: '{{ username }}'
-  ansible.builtin.file:
-    path: ~/DevOps/
-    state: directory 
-
-# THEME DIRECTORY: ####################
-- name: Create Theme Directory
-  tags: [devops]
-  become_user: '{{ username }}'
-  ansible.builtin.file:
-    path: ~/DevOps/Theme
-    state: directory 
+  loop: '{{ directory }}'
 
 # SSH KEY: ############################
 - name: Create SSH Key
@@ -34,6 +19,11 @@
     state: present
     regenerate: never
     comment: '{{ comment }}'
+
+- name: Add SSH Key to ssh-agent
+  tags: [ssh, remote-access]
+  become_user: '{{ username }}'
+  command: ssh-add ~/.ssh/id_ed25519
 
 # GIT CONFIG: #########################
 - name: Configure Git Global Settings

@@ -1,4 +1,7 @@
 ---
 # USER VARIABLES
-comment: "steve@siliconwolf.net"
-
+comment: "example@example.com"
+directory: 
+  - .ssh
+  - DevOps
+  - DevOps/Theme 
