@@ -51,7 +51,6 @@ Sections have been broken down into roles with the site.yml file referencing eac
     - Cursors.
     - Wallpaper.
   - Apply 
-    - #FIXME: This does not seem to apply with gsettings command despite reboot. Using gnome-tweaks manually for now.
     - Theme
     - Icons.
     - Cursors.
@@ -96,7 +95,7 @@ ansible-playbook --inventory localhost site.yml --list-tags
 playbook: site.yml
 
   play #1 (localhost): Fedora Workstation Configuration	TAGS: []
-      TASK TAGS: [app-config, apps, cleanup, codecs, cursors, customisation, debug, devops, dnf, drivers, flatpaks, git, gnome, icons, remove, ssh, system, theme, wallpaper]
+      TASK TAGS: [app-config, apps, cleanup, codecs, cursors, debug, devops, dnf, drivers, flatpaks, git, gnome, icons, remove, ssh, system, theme, wallpaper]
 ```
 
 ### Tags and Reference
