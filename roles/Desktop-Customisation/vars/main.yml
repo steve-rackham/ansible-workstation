@@ -1,11 +1,17 @@
 ---
 # DESKTOP CUSTOMISATIONS VARS: ########
+# Theme dependencies.
 dependencies: 
   - gnome-themes-extra
   - gtk-murrine-engine
   - python3-psutil
   - sassc
 
+theme: 
+  repo: git@github.com:vinceliuice/Tela-circle-icon-theme.git
+  destination: tela-circle-icons 
+
+# Used to set the theme with dconf.
 interface:
   color-scheme: 'prefer-dark'
   cursor-theme: 'Graphite-dark-cursors'

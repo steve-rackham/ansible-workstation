@@ -24,11 +24,11 @@
   loop: '{{ dependencies }}'
 
 - name: Clone Theme 
-  tags: [theme]
+  tags: [theme, testing]
   become_user: '{{ username }}'
   ansible.builtin.git:
-    repo: git@github.com:vinceliuice/Graphite-gtk-theme.git
-    dest: ~/DevOps/Theme/graphite-gtk-theme   
+    repo: '{{ theme.repo }}'
+    dest: ~/DevOps/Theme/'{{ theme.destination }}'
 
 - name: Install Theme 
   tags: [theme]
