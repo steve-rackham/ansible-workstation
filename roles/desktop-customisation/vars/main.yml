@@ -4,3 +4,9 @@ dependencies:
   - sassc
   - gnome-themes-extra
   - gtk-murrine-engine
+
+interface:
+  color-scheme: 'prefer-dark'
+  cursor-theme: 'Graphite-dark-cursors'
+  gtk-theme: 'Graphite-Dark'
+  icon-theme: 'Tela-circle-dark'

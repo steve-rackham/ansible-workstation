@@ -17,14 +17,14 @@
 #    Icon theme Tela-circle-icon-theme
 
 - name: Install Theme Dependencies
-  tags: [customisation, theme]
+  tags: [theme]
   ansible.builtin.dnf:
     name: '{{ item }}'
     state: present
   loop: '{{ dependencies }}'
 
 - name: Clone Theme 
-  tags: [customisation, theme]
+  tags: [theme]
   become_user: '{{ username }}'
   ansible.builtin.git:
     repo: git@github.com:vinceliuice/Graphite-gtk-theme.git
@@ -38,7 +38,7 @@
 
 # ICONS: ##############################
 - name: Clone Icons  
-  tags: [customisation, theme, icons]
+  tags: [theme, icons]
   become_user: '{{ username }}'
   ansible.builtin.git:
     repo: git@github.com:vinceliuice/Tela-circle-icon-theme.git
@@ -56,7 +56,7 @@
 
 # CURSORS: ############################
 - name: Clone Cursors 
-  tags: [customisation, theme, cursors]
+  tags: [theme, cursors]
   become_user: '{{ username }}'
   ansible.builtin.git:
     repo: git@github.com:vinceliuice/Graphite-cursors.git
@@ -77,3 +77,19 @@
   tags: [theme, wallpaper]
   become_user: '{{ username }}'
   command: ~/DevOps/Theme/graphite-gtk-theme/wallpaper/install-wallpapers.sh
+
+# SET THEME: ##########################
+# FIXME: 
+# "Failed to import the required Python library (psutil) on fedora's Python /usr/bin/python3. 
+# Please read the module documentation and install it in the appropriate location. 
+# If the required library is installed, but Ansible is using the wrong Python interpreter, 
+# please consult the documentation on ansible_python_interpreter"}
+
+- name: Set DConf Interface 
+  tags: [theme, dconf]
+  community.general.dconf:
+    key: "/org/gnone/desktop/interface"
+    value: "[('{{ item.key }}'), ('{{ item.value }}')]"
+    state: present
+  loop: "{{ lookup('dict', interface) }}"
+
