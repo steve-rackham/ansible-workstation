@@ -1,21 +1,6 @@
 ---
 # DESKTOP CUSTOMISATIONS TASK: ########
 # THEME: ##############################
-#
-# https://github.com/vinceliuice/Graphite-gtk-theme:
-# 
-# Requires:
-#
-#    GTK >=3.20
-#    gnome-themes-extra (or gnome-themes-standard)
-#    Murrine engine — The package name depends on the distro.
-#        gtk-engine-murrine on Arch Linux
-#        gtk-murrine-engine on Fedora
-#        gtk2-engine-murrine on openSUSE
-#        gtk2-engines-murrine on Debian, Ubuntu, etc.
-#    sassc — build dependency
-#    Icon theme Tela-circle-icon-theme
-
 - name: Install Theme Dependencies
   tags: [theme]
   ansible.builtin.dnf:
@@ -28,46 +13,41 @@
   become_user: '{{ username }}'
   ansible.builtin.git:
     repo: '{{ theme.repo }}'
-    dest: ~/DevOps/Theme/'{{ theme.destination }}'
+    dest: ~/DevOps/Theme/{{ theme.destination }}
 
 - name: Install Theme 
   tags: [theme]
   become_user: '{{ username }}'
-  command: ~/DevOps/Theme/graphite-gtk-theme/install.sh
+  command: ~/DevOps/Theme/{{ theme.destination }}/install.sh
 
 
 # ICONS: ##############################
 - name: Clone Icons  
-  tags: [theme, icons]
+  tags: [theme, icons, testing]
   become_user: '{{ username }}'
   ansible.builtin.git:
-    repo: git@github.com:vinceliuice/Tela-circle-icon-theme.git
-    dest: ~/DevOps/Theme/tela-circle-icons   
+    repo: '{{ icons.repo }}'
+    dest: ~/DevOps/Theme/{{ icons.destination }} 
     
 - name: Install Icons 
   tags: [theme, icons]
   become_user: '{{ username }}'
-  command: ~/DevOps/Theme/tela-circle-icons/install.sh -c
-
-- name: Set Icons 
-  tags: [theme, icons]
-  become_user: '{{ username }}'
-  command: gsettings set org.gnome.desktop.interface icon-theme "Tela circle dark"
+  command: ~/DevOps/Theme/{{ icons.destination }}/install.sh -c
 
 # CURSORS: ############################
 - name: Clone Cursors 
-  tags: [theme, cursors]
+  tags: [theme, cursors, testing]
   become_user: '{{ username }}'
   ansible.builtin.git:
-    repo: git@github.com:vinceliuice/Graphite-cursors.git
-    dest: ~/DevOps/Theme/graphite-gtk-cursors   
+    repo: '{{ cursors.repo }}'
+    dest: ~/DevOps/Theme/{{ cursors.destination }} 
 
 # The cursor install script prompts the user.
 - name: Install Cursors 
   tags: [theme, cursors]
   become_user: '{{ username }}'
   expect: 
-    command: ~/DevOps/Theme/graphite-gtk-cursors/install.sh
+    command: ~/DevOps/Theme/{{ cursors.destination }}/install.sh
     responses:
       Question:
         - 1
@@ -76,15 +56,9 @@
 - name: Install Wallpaper 
   tags: [theme, wallpaper]
   become_user: '{{ username }}'
-  command: ~/DevOps/Theme/graphite-gtk-theme/wallpaper/install-wallpapers.sh
+  command: ~/DevOps/Theme/{{ theme.destination }}/wallpaper/install-wallpapers.sh
 
 # SET THEME: ##########################
-# FIXME: 
-# "Failed to import the required Python library (psutil) on fedora's Python /usr/bin/python3. 
-# Please read the module documentation and install it in the appropriate location. 
-# If the required library is installed, but Ansible is using the wrong Python interpreter, 
-# please consult the documentation on ansible_python_interpreter"}
-
 - name: Set DConf Interface 
   tags: [theme, dconf]
   community.general.dconf:

@@ -1,5 +1,20 @@
 ---
 # DESKTOP CUSTOMISATIONS VARS: ########
+#
+# https://github.com/vinceliuice/Graphite-gtk-theme:
+# 
+# Requires:
+#
+#    GTK >=3.20
+#    gnome-themes-extra (or gnome-themes-standard)
+#    Murrine engine — The package name depends on the distro.
+#        gtk-engine-murrine on Arch Linux
+#        gtk-murrine-engine on Fedora
+#        gtk2-engine-murrine on openSUSE
+#        gtk2-engines-murrine on Debian, Ubuntu, etc.
+#    sassc — build dependency
+#    Icon theme Tela-circle-icon-theme
+
 # Theme dependencies.
 dependencies: 
   - gnome-themes-extra
@@ -7,9 +22,18 @@ dependencies:
   - python3-psutil
   - sassc
 
+# Theme repos and where to store.
 theme: 
+  repo: git@github.com:vinceliuice/Graphite-gtk-theme.git
+  destination: Graphite 
+
+cursors: 
+  repo: git@github.com:vinceliuice/Graphite-cursors.git
+  destination: Cursors 
+
+icons: 
   repo: git@github.com:vinceliuice/Tela-circle-icon-theme.git
-  destination: tela-circle-icons 
+  destination: Icons 
 
 # Used to set the theme with dconf.
 interface:

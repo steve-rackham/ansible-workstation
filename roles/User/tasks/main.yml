@@ -5,7 +5,7 @@
   tags: [ssh]
   become_user: '{{ username }}'
   ansible.builtin.file:
-    path: ~/'{{ item }}'
+    path: ~/{{ item }}
     state: directory 
   loop: '{{ directory }}'
 
@@ -30,4 +30,4 @@
   tags: [git, app-config]
   template:
     src: .gitconfig
-    dest: /home/'{{ username }}'/.gitconfig
+    dest: /home/{{ username }}/.gitconfig
