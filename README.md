@@ -45,7 +45,6 @@ Sections have been broken down into roles with the site.yml file referencing eac
   - Configure user applications.
 - Desktop-customisation
   - Install
-    - #TODO: Add variables for theming elements. Hard-coded to use Graphite-GTK-Theme, and associated cursors and icons: https://github.com/vinceliuice/Graphite-gtk-theme
     - Theme.
     - Icons.
     - Cursors.
