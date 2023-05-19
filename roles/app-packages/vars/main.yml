@@ -21,6 +21,7 @@ apps:
   - hwinfo
   - librewolf
   - lutris
+  - python3-psutil
   - steam
   - timeshift
 

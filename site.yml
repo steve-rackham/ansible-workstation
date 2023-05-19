@@ -7,8 +7,8 @@
 
 # ROLES: ##############################
   roles:
-    - system
-    - user
-    - app-packages
-    - app-config
-    - desktop-customisation
+    - System
+    - User
+    - App-Packages
+    - App-Config
+    - Desktop-Customisation

@@ -1,9 +1,10 @@
 ---
 # DESKTOP CUSTOMISATIONS VARS: ########
 dependencies: 
-  - sassc
   - gnome-themes-extra
   - gtk-murrine-engine
+  - python3-psutil
+  - sassc
 
 interface:
   color-scheme: 'prefer-dark'
