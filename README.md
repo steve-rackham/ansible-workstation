@@ -43,7 +43,6 @@ Sections have been broken down into roles with the site.yml file referencing eac
     - Unwanted packages.
 - App-config
   - Configure user applications.
-    - #TODO: vscodium extensions.
 - Desktop-customisation
   - Install
     - #TODO: Add variables for theming elements. Hard-coded to use Graphite-GTK-Theme, and associated cursors and icons: https://github.com/vinceliuice/Graphite-gtk-theme
@@ -67,14 +66,14 @@ The playbook requires elevation for the bulk of the installs. It is assumed that
 2. From within the ansible-workstation directory:
 
 ```shell
-ansible-playbook --inventory localhost site.yml -ask-become-pass
+ansible-playbook --inventory localhost site.yml -K
 ```
 ### Example: Run only themes tag
 1. Update any var files and global vars as required.
 2. From within the ansible-workstation directory:
 
 ```shell
-ansible-playbook --inventory localhost site.yml -ask-become-pass -tags theme
+ansible-playbook --inventory localhost site.yml -K --tags theme
 ```
 
 ### Example: Run every but the themes tag
@@ -82,7 +81,7 @@ ansible-playbook --inventory localhost site.yml -ask-become-pass -tags theme
 2. From within the ansible-workstation directory:
 
 ```shell
-ansible-playbook --inventory localhost site.yml -ask-become-pass --skip-tags theme
+ansible-playbook --inventory localhost site.yml -K --skip-tags theme
 ```
 <br>
 

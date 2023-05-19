@@ -1,4 +1,6 @@
 ---
 # DESKTOP CUSTOMISATIONS VARS: ########
-theme_src: git@github.com:vinceliuice/Graphite-gtk-theme.git
-theme_dest: 
+dependencies: 
+  - sassc
+  - gnome-themes-extra
+  - gtk-murrine-engine

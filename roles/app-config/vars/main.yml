@@ -1,11 +1,9 @@
 ---
 # APP-CONFIG VARIABLES: ###############
 # VS Codium Extensions: ###############
-code_extensions: 
-  - aprilandjan.ascii-tree-generator
+codium_extensions: 
   - eamodio.gitlens
   - hashicorp.terraform
-  - ms-azuretools.vscode-azureterraform
   - ms-python.python
   - ms-vscode.azure-account
   - ms-vscode.powershell-preview

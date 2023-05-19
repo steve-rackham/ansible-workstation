@@ -8,21 +8,23 @@ rpm:
 librewolf: "https://rpm.librewolf.net/librewolf-repo.repo"
 
 # PACKAGES: ###########################
+#  - broadcom-wl removed from drivers.
+
 drivers:
-  - broadcom-wl
   - logiops
 
 apps: 
-  - lutris
-  - timeshift
-  - steam
+  - codium 
+  - discord
   - evolution
   - hugo
-  - librewolf
   - hwinfo
+  - librewolf
+  - lutris
+  - steam
+  - timeshift
 
 gnome: 
-  - gtk-murrine-engine
   - gnome-shell-extension-dash-to-dock
   - gnome-shell-extension-dash-to-panel
   - gnome-shell-extension-gsconnect
@@ -31,7 +33,6 @@ gnome:
   - gnome-tweaks
   - libgtop2-devel 
   - lm_sensors
-  - sassc
 
 codecs:
   - gstreamer1-libav
@@ -45,17 +46,18 @@ codecs:
 flatpaks:
   - com.bitwarden.desktop
   - com.mattjakeman.ExtensionManager
-  - com.vscodium.codium
   - io.freetubeapp.FreeTube
   - org.gimp.GIMP
-  - org.gnome.Extensions
   - org.signal.Signal
   - tv.plex.PlexDesktop
 
 # UNWANTED PACKAGES: ##################
 remove: 
+  - cheese
   - gnome-calendar
   - gnome-contacts
   - gnome-maps
   - gnome-tour
+  - rhythmbox
+  - simple-scan
   

@@ -3,9 +3,10 @@
 # CODIUM: #############################
 - name: Codium Extenstions
   tags: [codium]
-  ansible.builtin.debug:
-    msg: "Installing Codium Extensions"
-
+  become_user: wolf
+  ansible.builtin.shell: codium --install-extension '{{ item }}'
+  with_items: '{{ codium_extensions }}'
+  
 # STARSHIP: ###########################
 # ADD COPR: 
 - name: Add Starship COPR

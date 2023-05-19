@@ -1,6 +1,28 @@
 ---
 # DESKTOP CUSTOMISATIONS TASK: ########
 # THEME: ##############################
+#
+# https://github.com/vinceliuice/Graphite-gtk-theme:
+# 
+# Requires:
+#
+#    GTK >=3.20
+#    gnome-themes-extra (or gnome-themes-standard)
+#    Murrine engine — The package name depends on the distro.
+#        gtk-engine-murrine on Arch Linux
+#        gtk-murrine-engine on Fedora
+#        gtk2-engine-murrine on openSUSE
+#        gtk2-engines-murrine on Debian, Ubuntu, etc.
+#    sassc — build dependency
+#    Icon theme Tela-circle-icon-theme
+
+- name: Install Theme Dependencies
+  tags: [customisation, theme]
+  ansible.builtin.dnf:
+    name: '{{ item }}'
+    state: present
+  loop: '{{ dependencies }}'
+
 - name: Clone Theme 
   tags: [customisation, theme]
   become_user: '{{ username }}'
@@ -55,8 +77,3 @@
   tags: [theme, wallpaper]
   become_user: '{{ username }}'
   command: ~/DevOps/Theme/graphite-gtk-theme/wallpaper/install-wallpapers.sh
-
-- name: Set Wallpaper
-  tags: [theme, wallpaper]
-  become_user: '{{ username }}'
-  command: gsettings set org.gnome.desktop.background picture-uri "file:~/.local/share/backgrounds/wave-Dark-fedora.png"
