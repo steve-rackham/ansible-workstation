@@ -17,12 +17,15 @@ apps:
   - codium 
   - discord
   - evolution
+  - fira-code-fonts
   - hugo
   - hwinfo
   - librewolf
   - lutris
   - python3-psutil
+  - source-foundry-hack-fonts
   - steam
+  - tilix
   - timeshift
 
 gnome: 
