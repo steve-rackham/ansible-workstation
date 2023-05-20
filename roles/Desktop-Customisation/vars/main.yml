@@ -35,9 +35,23 @@ icons:
   repo: git@github.com:vinceliuice/Tela-circle-icon-theme.git
   destination: Icons 
 
+# Wallpaper:
+# Expected location under user.local/share/backgrounds.
+wallpaper: 
+  picture-uri: 'file:~/.local/share/backgrounds/wave-Dark-fedora.png'
+  picture-uri-dark: 'file:~/.local/share/backgrounds/wave-Dark-fedora.png'
+
+
 # Used to set the theme with dconf.
 interface:
   color-scheme: 'prefer-dark'
   cursor-theme: 'Graphite-dark-cursors'
   gtk-theme: 'Graphite-Dark'
   icon-theme: 'Tela-circle-dark'
+
+# FileChooser:
+fileChooser:
+  show-hidden: true
+  sort-directories-first: true
+
+numlock: true
