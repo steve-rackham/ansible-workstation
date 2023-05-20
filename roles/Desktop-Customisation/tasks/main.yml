@@ -59,7 +59,7 @@
   command: ~/DevOps/Theme/{{ theme.destination }}/wallpaper/install-wallpapers.sh
 
 - name: Set Wallpaper
-  tags: [theme, wallpaper, testing]
+  tags: [theme, wallpaper]
   community.general.dconf:
     key: "/org/gnome/desktop/background"
     value: "[('{{ item.key }}'), ('{{ item.value }}')]"
