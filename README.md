@@ -55,6 +55,7 @@ Sections have been broken down into roles with the site.yml file referencing eac
     - Cursors.
     - Wallpaper.
     - Common Gnome GSettings.
+    - Set Shell Extension Settings.
 
 # Usage
 The playbook requires elevation for the bulk of the installs. It is assumed that the user has sudo elevation.

@@ -5,7 +5,7 @@
 # 
 # Requires:
 #
-#    GTK >=3.20
+#    GTK >: 3.20
 #    gnome-themes-extra (or gnome-themes-standard)
 #    Murrine engine — The package name depends on the distro.
 #        gtk-engine-murrine on Arch Linux
@@ -55,3 +55,74 @@ fileChooser:
   sort-directories-first: true
 
 numlock: true
+
+# Shell Extensions and Settings:
+shell:
+  enabled-extensions: ['background-logo@fedorahosted.org', 'dash-to-panel@jderose9.github.com', 'gsconnect@andyholmes.github.io', 'openweather-extension@jenslody.de', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'dash-to-dock@micxgx.gmail.com']
+  favorite-apps: ['librewolf.desktop', 'org.gnome.Evolution.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'org.gnome.Terminal.desktop', 'codium.desktop', 'discord.desktop', 'org.signal.Signal.desktop', 'io.freetubeapp.FreeTube.desktop', 'com.bitwarden.desktop.desktop', 'steam.desktop', 'org.gnome.Settings.desktop', 'com.mattjakeman.ExtensionManager.desktop']
+  last-selected-power-profile: 'performance'
+  user-theme: 'Graphite-Dark'
+
+# ArcMenu:
+arcmenu:
+  arc-menu-icon: 1
+  distro-icon: 2
+  multi-monitor: true
+
+# Dash-to-Dock:
+dock: 
+  apply-custom-theme: true
+  background-color: 'rgb(36,31,49)'
+  background-opacity: 0.80000000000000000
+  custom-background-color: true
+  custom-theme-shrink: false
+  dash-max-icon-size: 48
+  dock-position: 'BOTTOM'
+  height-fraction: 1.0
+  multi-monitor: false
+  preferred-monitor: -2
+  preferred-monitor-by-connector: 'DP-1'
+  preview-size-scale: 0.28000000000000000
+  show-apps-at-top: true
+  show-mounts: false
+  show-show-apps-button: true
+  transparency-mode: 'FIXED'
+
+# Dash-to-Panel:
+panel: 
+  animate-appicon-hover-animation-extent: {'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
+  appicon-margin: 8
+  appicon-padding: 4
+  available-monitors: [0, 1]
+  dot-position: 'BOTTOM'
+  hotkeys-overlay-combo: 'TEMPORARILY'
+  leftbox-padding: -1
+  panel-anchors: '{"0":"MIDDLE","1":"MIDDLE"}'
+  panel-element-positions: '{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"centerMonitor"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"centerMonitor"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
+  panel-lengths: '{"0":100,"1":100}'
+  panel-positions: '{"0":"TOP","1":"TOP"}'
+  panel-sizes: '{"0":32,"1":32}'
+  primary-monitor: 0
+  show-favorites: false
+  show-favorites-all-monitors: false
+  show-running-apps: false
+  status-icon-padding: -1
+  stockgs-keep-dash: false
+  stockgs-keep-top-panel: false
+  trans-bg-color: '#241f31'
+  trans-panel-opacity: 0.20000000000000001
+  trans-use-custom-bg: false
+  trans-use-custom-gradient: false
+  trans-use-custom-opacity: false
+  trans-use-dynamic-opacity: false
+  tray-padding: -1
+  window-preview-title-position: 'TOP'
+
+# Open Weather:
+openweather: 
+  city: '-45.8740984,170.5035755>Dunedin, Dunedin City, Otago, 9016, New Zealand/Aotearoa>0'
+  menu-alignment: 71.933333333333337
+  position-in-panel: 'right'
+  show-comment-in-panel: true
+  translate-condition: true
+  wind-direction: false

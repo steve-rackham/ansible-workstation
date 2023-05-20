@@ -101,3 +101,56 @@
     key: "/org/gnome/desktop/peripherals/keyboard/"
     value: "[(numlock-state), ('{{ numlock.value }}')]"
     state: present
+
+# SHELL EXTENSIONS: ###################
+- name: Set Shell Extensions 
+  tags: [theme, dconf, extensions]
+  community.general.dconf:
+    key: "/org/gnome/shell"
+    value: "[('{{ item.key }}'), ('{{ item.value }}')]"
+    state: present
+  loop: "{{ lookup('dict', shell) }}"
+
+# Shell User Theme:
+- name: Set Shell Extensions User Theme
+  tags: [theme, dconf, extensions]
+  community.general.dconf:
+    key: "/org/gnome/shell/extensions/user-theme"
+    value: "[('{{ name }}'), ('{{ shell.user-theme.value }}')]"
+    state: present
+
+# ArcMenu:
+- name: Set ArcMenu Extension 
+  tags: [theme, dconf, extensions]
+  community.general.dconf:
+    key: "/org/gnome/shell/extensions/arcmenu"
+    value: "[('{{ item.key }}'), ('{{ item.value }}')]"
+    state: present
+  loop: "{{ lookup('dict', arcmenu) }}"
+
+# Dash-to-Dock:
+- name: Set Dash-to-Dock Extension 
+  tags: [theme, dconf, extensions]
+  community.general.dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock"
+    value: "[('{{ item.key }}'), ('{{ item.value }}')]"
+    state: present
+  loop: "{{ lookup('dict', dock) }}"
+
+  # Dash-to-Panel:
+- name: Set Dash-to-Panel Extension 
+  tags: [theme, dconf, extensions]
+  community.general.dconf:
+    key: "/org/gnome/shell/extensions/dash-to-panel"
+    value: "[('{{ item.key }}'), ('{{ item.value }}')]"
+    state: present
+  loop: "{{ lookup('dict', panel) }}"
+
+# Open Weather:
+- name: Set Open Weather Extension 
+  tags: [theme, dconf, extensions]
+  community.general.dconf:
+    key: "/org/gnome/shell/extensions/openweather"
+    value: "[('{{ item.key }}'), ('{{ item.value }}')]"
+    state: present
+  loop: "{{ lookup('dict', openweather) }}"
