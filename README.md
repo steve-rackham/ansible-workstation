@@ -16,7 +16,25 @@ Setup Fedora Workstation post installation for home use.
 sudo dnf install ansible git -y
 git clone git@github.com:steve-rackham/ansible-workstation.git
 ```
-
 <br>
+
+## Usage
+First:
+- Update any var files and global vars as required.
+- From within the ansible-workstation directory:
+
+Then run one of the following examples: 
+
+```shell
+# Example: Run all roles and tasks on localhost:
+ansible-playbook --inventory localhost site.yml -K
+
+# Example: Run only themes tag
+ansible-playbook --inventory localhost site.yml -K --tags theme
+
+# Example: Run every but the themes tag
+ansible-playbook --inventory localhost site.yml -K --skip-tags theme
+
+```
 
 Check out blog post for further details: https://siliconwolf.net/setup-fedora-workstation-ansible/
