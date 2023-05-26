@@ -16,7 +16,6 @@ Setup Fedora Workstation post installation for home use.
 sudo dnf install ansible git -y
 git clone git@github.com:steve-rackham/ansible-workstation.git
 ```
-<br>
 
 ## Usage
 First:
