@@ -49,6 +49,7 @@ codecs:
 flatpaks:
   - com.bitwarden.desktop
   - com.mattjakeman.ExtensionManager
+  - com.spotify.Client
   - io.freetubeapp.FreeTube
   - org.gimp.GIMP
   - org.signal.Signal
