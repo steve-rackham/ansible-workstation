@@ -8,13 +8,11 @@ rpm:
 librewolf: "https://rpm.librewolf.net/librewolf-repo.repo"
 
 # PACKAGES: ###########################
-#  - broadcom-wl removed from drivers.
-
 drivers:
+  - broadcom-wl
   - logiops
 
 apps: 
-  - codium 
   - discord
   - evolution
   - fira-code-fonts
@@ -29,7 +27,6 @@ apps:
 
 gnome: 
   - gnome-shell-extension-dash-to-dock
-  - gnome-shell-extension-dash-to-panel
   - gnome-shell-extension-gsconnect
   - gnome-shell-extension-openweather
   - gnome-shell-extension-user-theme
@@ -50,10 +47,11 @@ flatpaks:
   - com.bitwarden.desktop
   - com.mattjakeman.ExtensionManager
   - com.spotify.Client
+  - com.vscodium.codium
   - io.freetubeapp.FreeTube
-  - org.gimp.GIMP
   - org.signal.Signal
   - tv.plex.PlexDesktop
+
 
 # UNWANTED PACKAGES: ##################
 remove: 

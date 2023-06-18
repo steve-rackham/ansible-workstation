@@ -1,7 +1,7 @@
 ---
 # APP CONFIGURATION: ##################
 # CODIUM: #############################
-- name: Codium Extenstions
+- name: Codium Extensions
   tags: [codium]
   become_user: wolf
   ansible.builtin.shell: codium --install-extension '{{ item }}'
