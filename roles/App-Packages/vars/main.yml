@@ -51,7 +51,7 @@ flatpaks:
   - io.freetubeapp.FreeTube
   - org.signal.Signal
   - tv.plex.PlexDesktop
-
+  - io.podman_desktop.PodmanDesktop
 
 # UNWANTED PACKAGES: ##################
 remove: 

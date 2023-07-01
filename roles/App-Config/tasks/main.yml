@@ -1,6 +1,13 @@
 ---
 # APP CONFIGURATION: ##################
 # CODIUM: #############################
+- name: Add Codium to Bash  
+  tags: [customisation, terminal, codium]
+  become_user: '{{ username }}'
+  ansible.builtin.lineinfile:
+    path: ~/.bashrc
+    line: alias codium="flatpak run com.vscodium.codium "
+
 - name: Codium Extensions
   tags: [codium]
   become_user: wolf
